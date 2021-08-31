@@ -1,0 +1,24 @@
+{
+  "name": "TypeScript-Study",
+  "version": "1.0.0",
+  "description": "타입스크립트 뿌셔버리자",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsh411/TypeScript-Study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsh411/TypeScript-Study/issues"
+  },
+  "homepage": "https://github.com/hsh411/TypeScript-Study#readme",
+  "devDependencies": {
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  }
+}
