@@ -2,6 +2,8 @@
 덕 타이핑(duck typing) 혹은 구조적 서브타이핑(structural subtyping) 이라고 한다.
 
 인터페이스는 이런 타입들의 이름을 짓는 역할을 하고 코드 안의 계약을 정의, 프로젝트 외부에서 사용하는 코드의 계약을 정의한다.
+
+좀더 쉽게 이해하자면 타입스크립트의 인터페이스는 일반적으로 타입 체크를 위해 사용되며 변수, 함수, 클래스 등에 사용할 수 있다.
 `;
 
 function interfaceOne(labeledobj: { label: string }) {
@@ -21,13 +23,21 @@ interfaceOne(myInterface);
 
 `이번엔 좀더 명확하게 작성해보자`;
 
+//인터페이스의 정의
 interface LabelValue {
   label: string;
+  content: string;
+  completed: boolean;
 }
 
 function interfaceTwo(labeledObj: LabelValue) {
-  console.log(labeledObj.label);
+  console.log(labeledObj);
 }
 
-let myInterface2 = { size: 10, label: "Size 10 Object" };
+let myInterface2 = {
+  size: 100,
+  label: "Size 10 Object",
+  content: "text",
+  completed: true,
+};
 interfaceTwo(myInterface2);
