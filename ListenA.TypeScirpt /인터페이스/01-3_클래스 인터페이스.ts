@@ -5,15 +5,21 @@ interface Todo2 {
   completed: boolean;
 }
 //TodoClass는 Todo2 인터페이스를 구현하여야한다
+
+/**
+ * Class에 인터페이스를 사용할 경우
+ *
+ * class명 뒤에 implements를 반드시 기입한다.
+ */
 class TodoClass implements Todo2 {
   constructor(
     public id: number,
     public content: string,
-    public completed: boolean
+    public completed: boolean,
   ) {}
 }
 
-const todoss = new TodoClass(1, "typescirpt", true);
+const todoss = new TodoClass(1, 'typescirpt', true);
 
 console.log(todoss);
 
@@ -28,26 +34,39 @@ console.log(todoss);
 `;
 
 //인터페이스 정의
-
-interface ClassPerson {
-  name: string;
-  saying(): void;
+interface Car {
+  color: string;
+  wheels: number;
+  start(): void;
 }
 
-class PersonInfo implements ClassPerson {
-  //인터페이스에서 정의한 프로퍼티의 구현
-  constructor(public name: string) {}
+class Benz implements Car {
+  color;
+  wheels = 4;
+  constructor(c: string) {
+    this.color = c;
+  }
 
-  //인터페이스에서 정의한 주상 메소드의 구현
-  saying() {
-    console.log(`내가 누구냐면 나는 ${this.name}`);
+  start() {
+    console.log('start Engine');
   }
 }
 
-function greeter(person: PersonInfo): void {
-  person.saying();
+const car = new Benz('green');
+car.start();
+car.wheels;
+
+//인터페이스의 확장
+interface Car2 {
+  color: string;
+  wheels: number;
+  start(): void;
 }
 
-const introduce = new PersonInfo("Kim");
+interface Toy {
+  plastic: string;
+}
 
-greeter(introduce);
+interface ToyCar extends Car2, Toy {
+  price: number;
+}
